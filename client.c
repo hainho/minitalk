@@ -12,13 +12,12 @@ int main(int argc, const char **argv)
 
     if (argc != 3)
         return 0;
-
     pid = atoi(argv[1]);
-    temp = 0;
     ptr = 0;
     while (argv[2][ptr])
     {
-        c = argv[2][ptr];
+        temp = 0;
+        c = argv[2][ptr++];
         while (temp < 8)
         {
             if (c < 0)
@@ -27,7 +26,8 @@ int main(int argc, const char **argv)
                 kill(pid, SIGUSR2);
             temp++;
             c = c << 1;
+            usleep(100);
         }
-        ptr++;
+        usleep(100);
     }
 }

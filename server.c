@@ -66,14 +66,11 @@ void sig_handler(int signo)
 
     if (signo == SIGUSR1)
         c += 1;
-
-    write(1, &c, 1);
-    usleep(100);
-
     if (count == 8)
     {
         count = 0;
         write(1, &c, 1);
+        c = 0;
         usleep(100);
     }
 }
@@ -87,7 +84,9 @@ int main(void)
     signal(SIGUSR2, sig_handler);
     p = getpid();
     pid = ft_itoa(p);
+    write(1, "pid : ", 6);
     write(1, pid, strlen(pid));
+    write(1, "\n", 1);
     free(pid);
     while (1)
         sleep(1000);

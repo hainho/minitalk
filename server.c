@@ -71,7 +71,6 @@ void sig_handler(int signo)
         count = 0;
         write(1, &c, 1);
         c = 0;
-        usleep(100);
     }
 }
 

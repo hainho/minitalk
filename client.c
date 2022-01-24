@@ -21,13 +21,18 @@ int main(int argc, const char **argv)
         while (temp < 8)
         {
             if (c < 0)
-                kill(pid, SIGUSR1);
+            {
+                if (kill(pid, SIGUSR1) == -1)
+                    write(1, "siguser1err\n", 12);
+            }
             else
-                kill(pid, SIGUSR2);
+            {
+                if (kill(pid, SIGUSR2) == -1)
+                    write(1, "siguser2err\n", 12);
+            }
             temp++;
             c = c << 1;
-            usleep(100);
+            usleep(600);
         }
-        usleep(100);
     }
 }

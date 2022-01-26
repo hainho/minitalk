@@ -1,12 +1,12 @@
 #include "ft_minitalk.h"
 
-void sig_handler(int signo)
+static void sig_handler(int signo)
 {
     static int count;
     static char c;
+
     c = c << 1;
     count++;
-
     if (signo == SIGUSR1)
         c += 1;
     if (count == 8)
@@ -17,10 +17,10 @@ void sig_handler(int signo)
     }
 }
 
-int main(void)
+int         main(void)
 {
-    int p;
-    char *pid;
+    int     p;
+    char    *pid;
 
     signal(SIGUSR1, sig_handler);
     signal(SIGUSR2, sig_handler);

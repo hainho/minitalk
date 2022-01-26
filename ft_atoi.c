@@ -1,6 +1,6 @@
 #include "ft_minitalk.h"
 
-static int ft_isdigit(int c)
+static int  ft_isdigit(int c)
 {
     if (c >= '0' && c <= '9')
         return (1);
@@ -8,7 +8,7 @@ static int ft_isdigit(int c)
         return (0);
 }
 
-static int ft_isspace(const char c)
+static int  ft_isspace(const char c)
 {
     if (c == '\t' || c == '\f' || c == '\r' || c == '\v' || c == '\n' || c == ' ')
         return (1);
@@ -16,10 +16,10 @@ static int ft_isspace(const char c)
         return (0);
 }
 
-int ft_atoi(const char *str)
+int         ft_atoi(const char *str)
 {
-    unsigned long long n;
-    int sign;
+    unsigned long long  n;
+    int                 sign;
 
     sign = 1;
     n = 0;

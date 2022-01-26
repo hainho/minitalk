@@ -1,6 +1,6 @@
 #include "ft_minitalk.h"
 
-static int ft_itoasize(int n)
+static int  ft_itoasize(int n)
 {
     int size;
 
@@ -29,12 +29,12 @@ static char *ft_rec_itoa(long long n, char *dst)
     return (dst + 1);
 }
 
-char *ft_itoa(int n)
+char        *ft_itoa(int n)
 {
-    char *dst;
-    char *temp;
-    int size;
-    long long m;
+    char        *dst;
+    char        *temp;
+    int         size;
+    long long   m;
 
     m = n;
     size = ft_itoasize(n);

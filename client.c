@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "ft_minitalk.h"
 
 int main(int argc, const char **argv)
 {
@@ -12,7 +9,7 @@ int main(int argc, const char **argv)
 
     if (argc != 3)
         return 0;
-    pid = atoi(argv[1]);
+    pid = ft_atoi(argv[1]);
     ptr = 0;
     while (argv[2][ptr])
     {

@@ -10,13 +10,15 @@ static int	ft_isdigit(int c)
 
 static int	ft_isspace(const char c)
 {
-	if (c == '\t' || c == '\f' || c == '\r' || c == '\v' || c == '\n' || c == ' ')
+	if (c == '\t' || c == '\f' || c == '\r')
+		return (1);
+	else if (c == '\v' || c == '\n' || c == ' ')
 		return (1);
 	else
 		return (0);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned long long	n;
 	int					sign;

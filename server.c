@@ -17,7 +17,7 @@ static void	sig_handler(int signo)
 	}
 }
 
-int			main(void)
+int	main(void)
 {
 	int		p;
 	char	*pid;
@@ -32,5 +32,5 @@ int			main(void)
 	free(pid);
 	while (1)
 		sleep(1000);
-	return 0;
+	return (0);
 }

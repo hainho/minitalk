@@ -29,7 +29,7 @@ static char	*ft_rec_itoa(long long n, char *dst)
 	return (dst + 1);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*dst;
 	char		*temp;
